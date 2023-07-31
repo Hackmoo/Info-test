@@ -1,0 +1,41 @@
+.todoReact{
+    width: 20vw;
+    padding: 20px;
+}
+.changeNotesBlock{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.redactButton{
+    background: rgb(0, 102, 255);
+    float: right;
+}
+
+.modal{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modalCard{
+    width: 25%;
+    height: fit-content;
+    background: #FFF;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.modalEditorELement{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.modalCloseButton{
+    background: rgb(255, 56, 56);
+}
