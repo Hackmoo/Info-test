@@ -12,7 +12,7 @@ function App() {
   ]);
 
   function removeElement(id) {
-    // Удаление из массива
+    // Удаление из массива через фильтр
     setArray(array.filter((el) => el.id !== id));
   }
 
@@ -32,27 +32,26 @@ function App() {
       temp[temp.findIndex((el) => el.id === currentElement.id)].name = text;
       temp[temp.findIndex((el) => el.id === currentElement.id)].inProgress = status;
       setArray(temp);
-      console.log(array)
     } else {
       alert("Поле должно быть заполнено");
     }
   }
 
   useEffect(() => {
-    // Фикс бага - пишет в редактировании
-    let temp = [...array]; // удалённую карточку
+    // Фикс бага - пишет в редактировании удалённую карточку
+    let temp = [...array]; 
     try {
       if (temp.find((el) => el.id === currentElement.id)) {
         return;
       } else {
         setCurrentElement(array[0]);
       }
-    } catch {
+    } catch {  // Вызывало ошибку, т.к вызывалось при currentElement undefiend в момент, когда нет карточек
       return;
     }
   }, [array]);
 
-  function addNote(text, status) {
+  function addNote(text, status) {                        // Добавление новых заметок
       let temp = { id: Date.now(), name: text, inProgress: status };
       setArray([...array, temp]);
   }
