@@ -18,7 +18,7 @@
     flex-direction: column;
     gap: 10px;
     resize: horizontal;
-    overflow: hidden;
+    overflow: auto;
     min-width: 10vw;
 }
 .noteInItem{
