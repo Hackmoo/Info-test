@@ -27,6 +27,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
+    height: 30px;
 }
 .deleteButton{
     padding: 5px 13px;
