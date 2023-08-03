@@ -27,13 +27,16 @@ function App() {
 
   function changeNote(text, status) {
     // Логика редактирования заметок
-    if (text) {
+    if(text){
       let temp = [...array];
       temp[temp.findIndex((el) => el.id === currentElement.id)].name = text;
       temp[temp.findIndex((el) => el.id === currentElement.id)].inProgress = status;
       setArray(temp);
-    } else {
-      alert("Поле должно быть заполнено");
+    }
+    else if(!text && status){
+      let temp = [...array];
+      temp[temp.findIndex((el) => el.id === currentElement.id)].inProgress = status;
+      setArray(temp);
     }
   }
 
